@@ -4,7 +4,7 @@
    {
        $email = trim($_POST['email']);
        $password = trim($_POST['password']);
-    //    $password = password_hash($password,PASSWORD_DEFAULT);
+
        if(strlen($email)==0 || strlen($password)==0)
        {
            echo "
@@ -15,7 +15,7 @@
        }
        else
        {
-            $q = "SELECT * FROM `users` where `email_id`='$email'";
+            $q = "SELECT * FROM `admins` where `email`='$email'";
             $result = mysqli_query($conn,$q);
 
             if(mysqli_num_rows($result)==0)
@@ -35,13 +35,10 @@
                        window.alert('password is incorrect');
                     </script>
                     ";
-                    echo "(55)".$entry['password']." ------ ".$password;
-
                 }
                 else
                 {
-                    $cname = $entry['company name'];
-                    header('location: account.php?email='.$email.'&cname='.$cname);
+                    header('location: adminaccount.php?email='.$email);
                     // header('location: account.php');
                 }
             }

@@ -6,8 +6,8 @@ include "conn.php";
      $cname = $_POST['cname'];
     //  $contact = $_POST['contact'];
     //  $address = $_POST['address'];
-     $email = $_POST['email'];
-     $password = $_POST['password'];
+     $email = trim($_POST['email']);
+     $password = trim($_POST['password']);
      $email = trim($email);
      $password = trim($password);
      if(strlen($email)==0 || strlen($password)==0){
@@ -16,7 +16,7 @@ include "conn.php";
         </script>";
      }
      else{
-     $password = password_hash($password,PASSWORD_DEFAULT);
+    //  $password = password_hash($password,PASSWORD_DEFAULT);
      $q = "SELECT `email_id` FROM `users` WHERE `email_id`='$email'";
      $result = mysqli_query($conn,$q);
      if(mysqli_num_rows($result)>0){
