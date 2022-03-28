@@ -1,3 +1,27 @@
+<?php
+   if(array_key_exists('mssg',$_GET))
+   {
+    $mssg = $_GET['mssg'];
+    if(trim($mssg)=="your account has been created")
+    { 
+    echo "
+     <script>
+       window.alert('your account has been created');
+     </script>
+     ";
+    }
+    else
+    {
+        echo "
+        <script>
+          window.alert('your entry has been recorded and you have been logged out');
+        </script>
+        "; 
+    }
+   }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

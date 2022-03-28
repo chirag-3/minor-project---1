@@ -32,7 +32,7 @@ include "conn.php";
      mysqli_query($conn,$q);
 
     //  echo "<script> window.confirm('YEPS'); </script>";
-     header("location: index.php");
+     header("location: index.php?mssg=your account has been created");
      }
  }
 }

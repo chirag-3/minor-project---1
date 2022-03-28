@@ -38,11 +38,9 @@
                 }
                 else
                 {
-                    echo "
-                    <script>
-                       window.alert('We found you');
-                    </script>
-                    ";
+                    $cname = $entry['company name'];
+                    header('location: account.php?email='.$email.'&cname='.$cname);
+                    // header('location: account.php');
                 }
             }
        } 
