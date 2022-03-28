@@ -12,8 +12,8 @@
        FOOD DONATION POINT
    </header> 
    <div id="btns"> 
-    <button><a href="userlogin.html">USER LOGIN</a></button>
-    <button><a href="adminlogin.html">ADMIN LOGIN</a></button>
+    <button><a href="userlogin.php">USER LOGIN</a></button>
+    <button><a href="adminlogin.php">ADMIN LOGIN</a></button>
     <!-- <button><a href="donatenow.html">DONATE NOW</a></button> -->
     <button><a href="signup.php">SIGN UP</a></button>
     <!-- <button><a href="editdonation.html">EDIT DONATION</a></button> -->

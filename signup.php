@@ -12,7 +12,7 @@ include "conn.php";
      $password = trim($password);
      if(strlen($email)==0 || strlen($password)==0){
         echo "<script> 
-        window.alert('Neither username nor password can be empty');
+        window.alert('Neither email-id nor password can be empty');
         </script>";
      }
      else{
