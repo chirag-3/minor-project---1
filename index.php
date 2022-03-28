@@ -5,27 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Donation Point</title>
-    <link rel="stylesheet" href="styling.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="stylingindex.css">
 </head>
 <body>
    <header>
        FOOD DONATION POINT
    </header> 
-   <div id="btns" class="ui-menu"> 
+   <div id="btns"> 
     <button><a href="userlogin.html">USER LOGIN</a></button>
     <button><a href="adminlogin.html">ADMIN LOGIN</a></button>
-    <button><a href="donatenow.html">DONATE NOW</a></button>
-    <button><a href="signup.html">SIGN UP</a></button>
-    <button><a href="editdonation.html">EDIT DONATION</a></button>
+    <!-- <button><a href="donatenow.html">DONATE NOW</a></button> -->
+    <button><a href="signup.php">SIGN UP</a></button>
+    <!-- <button><a href="editdonation.html">EDIT DONATION</a></button> -->
     <button><a href="contactus.html">CONTACT US</a></button>
    </div> 
    <div id="aboutus">
     <h2>ABOUT US</h2>
     <div id="content">
     Food is one of the necessities of humans, and it stands first among all basic needs - food,<br> shelter, and 
-clothing. It is important as it nourishes the human body- sustaining<br> the very existence of humans. 
+clothing. It is important as it nourishes the human body- sustains<br> the very existence of humans. 
 However, with the rising population and development of this <br>country, food wastage has risen to a new 
 high.
 <br>

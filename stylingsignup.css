@@ -1,0 +1,27 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+form{
+    border : 1px solid;
+    border-radius: 5px;; 
+    margin:auto;
+    width:60%;
+    margin-top:50px;
+}
+
+label{
+    margin-left:15px;
+}
+
+input{
+    margin:15px;
+}
+
+#submit{
+    padding:10px;
+    margin-left:40px;
+    width:20%;
+}
