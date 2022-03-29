@@ -1,4 +1,5 @@
 <?php
+   session_start();
    if(array_key_exists('mssg',$_GET))
    {
     $mssg = $_GET['mssg'];
@@ -14,10 +15,17 @@
     {
         echo "
         <script>
-          window.alert('your entry has been recorded and you have been logged out');
+          window.alert('your entry has been recorded and you have been redirected to home page');
         </script>
         "; 
     }
+   }
+
+   if(isset($_POST['logout'])){
+     session_unset();
+     session_destroy();
+    //  echo "<br>yeps<br>";
+     header("location: index.php");
    }
 ?>
 
@@ -29,12 +37,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Donation Point</title>
-    <link rel="stylesheet" href="stylingindex.css">
+    <link rel="stylesheet" href="indexstyling.css">
 </head>
 <body>
-   <header>
+   <header id="loggd">
        FOOD DONATION POINT
-   </header> 
+   </header>  
+   <?php
+      if(empty($_SESSION['email']) && empty($_SESSION['admin_email'])){
+
+      }
+      else 
+      { 
+        if(empty($_SESSION['admin_email'])){ ?>
+          <div id="logged">
+          Logged in as <?php echo $_SESSION['email'] ?>
+        </div>
+      <?php  }
+        else 
+        {  ?>
+          <div id="logged">
+          Logged in as <?php echo $_SESSION['admin_email'] ?>
+        </div> 
+      <?php  }
+      }
+   ?>
+   <?php if(empty($_SESSION['email']) && empty($_SESSION['admin_email'])){?>
    <div id="btns"> 
     <button><a href="userlogin.php">USER LOGIN</a></button>
     <button><a href="adminlogin.php">ADMIN LOGIN</a></button>
@@ -43,6 +71,22 @@
     <!-- <button><a href="editdonation.html">EDIT DONATION</a></button> -->
     <button><a href="contactus.html">CONTACT US</a></button>
    </div> 
+   <?php } else {?>
+    <div id="btns"> 
+    <form method="post">  
+    <button type="submit" value="LOGOUT" name="logout" >LOGOUT</button>
+   </form>
+    <!-- <button><a href="donatenow.html">DONATE NOW</a></button> -->
+    <?php if(empty($_SESSION['admin_email'])){ ?> 
+    <button><a href="account.php">ACCOUNT PAGE</a></button>
+    <?php } else { ?> 
+    <button><a href="adminaccount.php">ADMIN ACCOUNT PAGE</a></button>
+    <?php } ?>   
+    <!-- <button><a href="editdonation.html">EDIT DONATION</a></button> -->
+    <button><a href="contactus.html">CONTACT US</a></button>
+   </div>
+    <?php } ?>
+
    <div id="aboutus">
     <h2>ABOUT US</h2>
     <div id="content">

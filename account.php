@@ -1,7 +1,13 @@
 <?php
     include 'conn.php'; 
-    $email = $_GET['email'];
-    $cname = $_GET['cname'];
+    session_start();
+    if(empty($_SESSION['email'])){
+      header('location: index.php');
+  }
+    // $email = $_GET['email'];
+    // $cname = $_GET['cname'];
+    $email = $_SESSION['email'];
+    $cname = $_SESSION['cname'];
     if(isset($_POST['done']))
     {
         $dname = $_POST['dname'];
@@ -28,6 +34,12 @@
           mysqli_query($conn,$q);
           header('location: index.php?mssg=your entry has been recorded and you have been logged out');
         }
+    }
+    if(isset($_POST['logout'])){
+      session_unset();
+      session_destroy();
+     //  echo "<br>yeps<br>";
+      header("location: index.php");
     }
 ?>
 
@@ -76,9 +88,12 @@
        <br>
        <input type="submit" name="done" id="submit">
        <br>
-   </form>   
+   </form> 
+   <form method="post">  
+    <button type="submit" value="LOGOUT" name="logout" >LOGOUT</button>
+   </form>
    <button>
-       <a href="index.php">LOGOUT</a>
+       <a href="index.php">HOMEPAGE</a>
   </button>
    <br>
    PAST HISTORY

@@ -1,5 +1,9 @@
 <?php
    include "conn.php";
+   session_start();
+   if(!empty($_SESSION['admin_email'])){
+    header('location: index.php');
+}
    if(isset($_POST['done']))
    {
        $email = trim($_POST['email']);
@@ -38,8 +42,9 @@
                 }
                 else
                 {
-                    header('location: adminaccount.php?email='.$email);
-                    // header('location: account.php');
+                    $_SESSION['admin_email'] = $email;
+                    // header('location: adminaccount.php?email='.$email);
+                    header('location: adminaccount.php');
                 }
             }
        } 

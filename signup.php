@@ -1,5 +1,9 @@
 <?php
 include "conn.php";
+ session_start();
+ if(!empty($_SESSION['email'])){
+     header("location: index.php");
+ }
  if(isset($_POST['done']))
  {
     //  $hname = $_POST['hname'];
@@ -32,6 +36,7 @@ include "conn.php";
      mysqli_query($conn,$q);
 
     //  echo "<script> window.confirm('YEPS'); </script>";
+     
      header("location: index.php?mssg=your account has been created");
      }
  }

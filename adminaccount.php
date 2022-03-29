@@ -1,3 +1,21 @@
+<?php
+  include "conn.php";
+  session_start();
+  if(empty($_SESSION['admin_email'])){
+    header("location: index.php");
+  }
+  $email = $_SESSION['admin_email'];
+
+  if(isset($_POST['logout'])){
+    session_unset();
+    session_destroy();
+   //  echo "<br>yeps<br>";
+    header("location: index.php");
+  }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +31,7 @@
                 <th>Email-Id</th><th>Company Name</th><th>Donor name</th><th>contact</th><th>address</th><th>date</th><th>time</th><th>Description</th>
                </tr>
    <?php
-     include "conn.php";
+     
      $q = "SELECT * FROM donations";
 
      $result = mysqli_query($conn,$q);
@@ -34,9 +52,12 @@
 
    ?>
     </table>
-    <button>
-       <a href="index.php">LOGOUT</a>
-  </button>
+    <form method="post">  
+    <button type="submit" value="LOGOUT" name="logout" >LOGOUT</button>
+   </form>
+  <button>
+  <a href="index.php">HOMEPAGE</a>
+    </button>  
     
 </body>
 </html>

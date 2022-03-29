@@ -1,5 +1,9 @@
 <?php
+   session_start();
    include "conn.php";
+   if(!empty($_SESSION['email'])){
+       header('location: index.php');
+   }
    if(isset($_POST['done']))
    {
        $email = trim($_POST['email']);
@@ -35,14 +39,16 @@
                        window.alert('password is incorrect');
                     </script>
                     ";
-                    echo "(55)".$entry['password']." ------ ".$password;
+                    // echo "(55)".$entry['password']." ------ ".$password;
 
                 }
                 else
                 {
                     $cname = $entry['company name'];
-                    header('location: account.php?email='.$email.'&cname='.$cname);
-                    // header('location: account.php');
+                    $_SESSION['email'] = $email;
+                    $_SESSION['cname'] = $cname;
+                    // header('location: account.php?email='.$email.'&cname='.$cname);
+                    header('location: account.php');
                 }
             }
        } 
