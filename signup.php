@@ -6,10 +6,7 @@ include "conn.php";
  }
  if(isset($_POST['done']))
  {
-    //  $hname = $_POST['hname'];
      $cname = $_POST['cname'];
-    //  $contact = $_POST['contact'];
-    //  $address = $_POST['address'];
      $email = trim($_POST['email']);
      $password = trim($_POST['password']);
      $email = trim($email);
@@ -20,11 +17,9 @@ include "conn.php";
         </script>";
      }
      else{
-    //  $password = password_hash($password,PASSWORD_DEFAULT);
      $q = "SELECT `email_id` FROM `users` WHERE `email_id`='$email'";
      $result = mysqli_query($conn,$q);
      if(mysqli_num_rows($result)>0){
-        //  echo "this email id has already been used, use some othe email id";
         echo "<script> 
         window.alert('This email-id has already been used please use some other email-id');
         </script>";
@@ -33,20 +28,14 @@ include "conn.php";
      $q = "INSERT INTO `users` (`company name`,`email_id`,`password`) values (
      '$cname','$email','$password')";
 
-     mysqli_query($conn,$q);
-
-    //  echo "<script> window.confirm('YEPS'); </script>";
-     
-     header("location: index.php?mssg=your account has been created");
+    mysqli_query($conn,$q);
+    header("location: index.php?mssg=your account has been created");
      }
  }
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,43 +45,20 @@ include "conn.php";
 </head>
 <body>
    <form method="post">
-       <!-- <label for="hname">Handler Name : </label> -->
-       <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-       <!-- <input type="text" id="hname" name="hname"> -->
-       <!-- <br> -->
-       <label for="cname">Comapany name : </label>
-       <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+       <label for="cname">Comapany name </label>
+       <br>
        <input type="text" id="cname" name="cname">
        <br>
-       <label for="email">Email Id : </label>
+       <label for="email">Email Id </label>
+       <br>
        <input type="email" id="email" name="email">
        <br>
-       <!-- <label for="address">Address : </label>
-       &nbsp;&nbsp;&nbsp;&nbsp;
-       <input type="text" id="address" name="address">
-       <br> -->
-       <!-- <label for="contact"> Mobile no: </label>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-       <!-- <input type="number" id="contact" name="contact">
-       <br> -->
-       <!-- <label for="avgfun">Average function in month : </label>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <input type="number" id="avgfun" name="avgfun"> -->
-       <!-- <br> -->
-       <label for="password">Password : </label>
+       <label for="password">Password </label>
+       <br>
        <input type="password" id="password" name="password">
        <br>
-       <input type="submit" name="done" id="submit">
+       <input type="submit" name="done" id="submit" value="SUBMIT">
        <br>
-   </form>    
-   <!-- <script>
-       
-       document.getElementById("submit").onclick=function(){
-                if(flag==1){
-                window.alert("you account has been made");
-                }
-       }
-   </script>     -->
-    
+   </form>     
 </body>
 </html>

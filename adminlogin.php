@@ -61,13 +61,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Login</title>
+    <link rel="stylesheet" type="text/css" href="stylingsignup.css">
 </head>
 
 <body>
-    <form method="post">
-        Email-id : <input type="text" name="email"><br>
-        Password : <input type="password" name="password"><br>
-        <input type="submit" id="submit" name="done">
-    </form>    
+<form method="post">
+    <label for="cname">Email-id</label>
+    <br>
+    <input type="text" name="email">
+    <br>
+    <label for="cname">Password</label>
+    <br>
+    <input type="password" name="password">
+    <br>
+    <input type="submit" id="submit" name="done" value="SUBMIT">
+</form>      
 </body>
 </html>

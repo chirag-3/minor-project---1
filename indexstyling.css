@@ -5,7 +5,7 @@
 }
 
 body{
-     background-image: url("images\\image1.jpg") ; 
+     background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("images\\image1.jpg") ; 
      background-size:100% 100%; 
     height : 100vh;
 }
@@ -21,35 +21,61 @@ header{
     background-color: bisque;
 }
 
+/* #top{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    flex:0 0 50%;
+} */
+
+#heading{
+    color:white;
+    /* font:bolder; */
+    /* display: inline-block; */
+    /* margin-top: 50px; */
+    position:absolute;
+    top:50px;
+    left :20px;
+    font-weight: 900;
+    font-size: 120%;
+}
+
 #btns{
-  display:flex;
+  display:inline-flex;
   flex-direction:row;
   flex:1 0 150px;
-  margin:auto;
-  border:5px rgb(0, 0, 0) outset;
-  border-radius:15px;
+  position:relative;
+  left:270px;
+  /* border:5px rgb(0, 0, 0) outset; */
+  /* border-radius:15px; */
   padding:10px;
-  width:80%;
+  width:70%;
   justify-content: space-around;
   margin-top:30px;
   flex-wrap:wrap;
-  background: radial-gradient(circle,white,orange);
+  background: white;
 }
 #logged{
     position:absolute;
-    right:0;
-    top:0;
-    background-color: yellow;
-    color:red;
+    right:50px;
+    top:50px;
+    color:white;
+    font-weight: 900;
+    /* background-color: yellow; */
+    /* color:red; */
 }
 
 
 button{
-    background-color: rgb(78, 69, 163);
-    color:white;
+    /* background-color: rgb(151, 39, 39); */
+    color:rgb(0, 0, 0);
+    font-weight: 900;
     padding:10px;
     transition: font-size 0.5s ease; 
-    border:2px inset rgba(255, 255, 255, 0);
+    border:none;
+    background: rgb(255, 0, 0);
+    /* border:2px inset rgba(255, 255, 255, 0); */
+    border-radius:30px;
 }
 
 form{

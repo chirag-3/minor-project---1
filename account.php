@@ -56,47 +56,50 @@
 <body>
 <form method="post">
        <label for="cname">Company Name : </label>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
        <input type="text" id="cname" value=<?php echo $cname ?> readonly>
        <br>
        <label for="email">Email-Id</label>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
        <input type="email" id="email" value=<?php echo $email ?> readonly>
        <br>
        <label for="dname">Name : </label>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
        <input type="text" id="dname" name="dname">
        <br>
        <label for="contact">Contact No : </label>
        <input type="number" id="contact" name="contact">
        <br>
        <label for="address">Address : </label>
-       &nbsp;&nbsp;&nbsp;&nbsp;
+       <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
        <input type="text" id="address" name="address">
        <br>
        <label for="date">Date : </label>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
        <input type="date" id="date" name="date">
        <br>
        <label for="time">Time : </label>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
        <input type="time" id="time" name="time">
        <br>
        <label for="discription">Food Discription  : </label>
-       &nbsp;&nbsp
+       <!-- &nbsp;&nbsp -->
        <input type="text" id="discription" name="discription">
        <br>
        <input type="submit" name="done" id="submit">
        <br>
    </form> 
-   <form method="post">  
+   <form method="post" id="options">  
     <button type="submit" value="LOGOUT" name="logout" >LOGOUT</button>
-   </form>
-   <button>
+    <button>
        <a href="index.php">HOMEPAGE</a>
-  </button>
+    </button>
+   </form>
+   
    <br>
+   <span id="history">
    PAST HISTORY
+  </span>
    <br>
    <table> 
                <tr>

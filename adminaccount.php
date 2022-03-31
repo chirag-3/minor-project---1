@@ -52,12 +52,12 @@
 
    ?>
     </table>
-    <form method="post">  
+    <form method="post" id="options">  
     <button type="submit" value="LOGOUT" name="logout" >LOGOUT</button>
-   </form>
-  <button>
-  <a href="index.php">HOMEPAGE</a>
-    </button>  
+    <button>
+       <a href="index.php">HOMEPAGE</a>
+    </button>
+   </form>  
     
 </body>
 </html>

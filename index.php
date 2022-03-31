@@ -40,9 +40,7 @@
     <link rel="stylesheet" href="indexstyling.css">
 </head>
 <body>
-   <header id="loggd">
-       FOOD DONATION POINT
-   </header>  
+    
    <?php
       if(empty($_SESSION['email']) && empty($_SESSION['admin_email'])){
 
@@ -51,17 +49,21 @@
       { 
         if(empty($_SESSION['admin_email'])){ ?>
           <div id="logged">
-          Logged in as <?php echo $_SESSION['email'] ?>
+          <?php echo $_SESSION['email'] ?>
         </div>
       <?php  }
         else 
         {  ?>
           <div id="logged">
-          Logged in as <?php echo $_SESSION['admin_email'] ?>
+          <?php echo $_SESSION['admin_email'] ?>
         </div> 
       <?php  }
       }
    ?>
+  
+   <div id="heading">
+       FOOD DONATION POINT
+    </div> 
    <?php if(empty($_SESSION['email']) && empty($_SESSION['admin_email'])){?>
    <div id="btns"> 
     <button><a href="userlogin.php">USER LOGIN</a></button>
@@ -69,7 +71,7 @@
     <!-- <button><a href="donatenow.html">DONATE NOW</a></button> -->
     <button><a href="signup.php">SIGN UP</a></button>
     <!-- <button><a href="editdonation.html">EDIT DONATION</a></button> -->
-    <button><a href="contactus.html">CONTACT US</a></button>
+    <!-- <button><a href="contactus.html">CONTACT US</a></button> -->
    </div> 
    <?php } else {?>
     <div id="btns"> 
@@ -83,10 +85,10 @@
     <button><a href="adminaccount.php">ADMIN ACCOUNT PAGE</a></button>
     <?php } ?>   
     <!-- <button><a href="editdonation.html">EDIT DONATION</a></button> -->
-    <button><a href="contactus.html">CONTACT US</a></button>
+    <!-- <button><a href="contactus.html">CONTACT US</a></button> -->
    </div>
     <?php } ?>
-
+    
    <div id="aboutus">
     <h2>ABOUT US</h2>
     <div id="content">
