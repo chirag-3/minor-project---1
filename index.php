@@ -68,24 +68,20 @@
    <div id="btns"> 
     <button><a href="userlogin.php">USER LOGIN</a></button>
     <button><a href="adminlogin.php">ADMIN LOGIN</a></button>
-    <!-- <button><a href="donatenow.html">DONATE NOW</a></button> -->
     <button><a href="signup.php">SIGN UP</a></button>
-    <!-- <button><a href="editdonation.html">EDIT DONATION</a></button> -->
-    <!-- <button><a href="contactus.html">CONTACT US</a></button> -->
+
    </div> 
    <?php } else {?>
     <div id="btns"> 
     <form method="post">  
     <button type="submit" value="LOGOUT" name="logout" >LOGOUT</button>
    </form>
-    <!-- <button><a href="donatenow.html">DONATE NOW</a></button> -->
+
     <?php if(empty($_SESSION['admin_email'])){ ?> 
     <button><a href="account.php">ACCOUNT PAGE</a></button>
     <?php } else { ?> 
     <button><a href="adminaccount.php">ADMIN ACCOUNT PAGE</a></button>
     <?php } ?>   
-    <!-- <button><a href="editdonation.html">EDIT DONATION</a></button> -->
-    <!-- <button><a href="contactus.html">CONTACT US</a></button> -->
    </div>
     <?php } ?>
     
